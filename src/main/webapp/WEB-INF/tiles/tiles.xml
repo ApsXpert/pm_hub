@@ -1,0 +1,96 @@
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<definition name="mainLayout"
+		template="/WEB-INF/templates/mainlayout.jsp">
+		<put-attribute name="sidebar"
+			value="/WEB-INF/pages/common/sidebar.jsp" />
+		<put-attribute name="topbar"
+			value="/WEB-INF/pages/common/topbar.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/pages/common/footer.jsp" />
+	</definition>
+
+	<definition name="loginLayout"
+		template="/WEB-INF/templates/loginLayout.jsp">
+		<put-attribute name="body" value="" />
+	</definition>
+	
+	<definition name="publicLayout"
+		template="/WEB-INF/templates/publicLayout.jsp">
+		<put-attribute name="body" value="" />
+	</definition>
+
+	<definition name="createJob" extends="mainLayout">
+		<put-attribute name="title" value="Create Job" />
+		<put-attribute name="body"
+			value="/WEB-INF/pages/job/createJob.jsp" />
+	</definition>
+
+	<definition name="viewJob" extends="mainLayout">
+		<put-attribute name="title" value="Job Detail" />
+		<put-attribute name="body"
+			value="/WEB-INF/pages/job/viewJob.jsp" />
+	</definition>
+	
+	<definition name="jobList" extends="mainLayout">
+		<put-attribute name="title" value="Job List" />
+		<put-attribute name="body"
+			value="/WEB-INF/pages/job/jobList.jsp" />
+	</definition>
+
+	<definition name="loginPage" extends="loginLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/pages/auth/login.jsp" />
+	</definition>
+
+	<definition name="inValidSession" extends="loginLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/pages/auth/invalid-session.jsp" />
+	</definition>
+	
+	<definition name="signupSuccessPage" extends="publicLayout">
+	<put-attribute name="title" value="Sign up success" />
+		<put-attribute name="body"
+			value="/WEB-INF/pages/auth/signup-success.jsp" />
+	</definition>
+
+	<definition name="sessionExpired" extends="loginLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/pages/auth/invalid-session.jsp" />
+	</definition>
+
+	<definition name="omsDashboard" extends="mainLayout">
+		<put-attribute name="title" value="Dashboard" />
+		<put-attribute name="body"
+			value="/WEB-INF/pages/admin/dashboard.jsp" />
+	</definition>
+
+	<definition name="adminDashboard" extends="mainLayout">
+		<put-attribute name="title" value="Admin Dashboard" />
+		<put-attribute name="body"
+			value="/WEB-INF/pages/accountAdmin/dashboard.jsp" />
+	</definition>
+	
+	<definition name="view" extends="publicLayout">
+		<put-attribute name="title" value="Job Opening" />
+		<put-attribute name="body"
+			value="/WEB-INF/pages/public/viewJob.jsp" />
+	</definition>
+	
+	<definition name="applyJob" extends="publicLayout">
+		<put-attribute name="title" value="Apply for Job" />
+		<put-attribute name="body"
+			value="/WEB-INF/pages/public/applyJob.jsp" />
+	</definition>
+	
+	<definition name="applyResponse" extends="publicLayout">
+		<put-attribute name="title" value="Apply Successfully" />
+		<put-attribute name="body"
+			value="/WEB-INF/pages/public/applyResponse.jsp" />
+	</definition>
+
+</tiles-definitions>
